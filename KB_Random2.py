@@ -6,6 +6,26 @@ window = Tk()
 #window.title("Kettlebell Randomizer")
 window.geometry("400x400")
 
+def number():
+    try:
+        int(num.get())
+        int(exercise.get())
+        int(rest.get())
+        answer.configure(text="All Good!")
+    except ValueError:
+        answer.configure(text="Enter only numbers!")
+
+      
+
+answer=Label(window, font=20)
+answer.grid(row=20, column=0)
+
+
+check=Button(window, text="Check", command=number)
+check.grid(row=15, column=0)
+
+
+
 label1=Label(window, text="Choose number of exercises.")
 label1.grid(row=0, column=0)
 num=Entry(window, width=35, borderwidth=5)
@@ -18,6 +38,7 @@ label3=Label(window, text='Choose number of seconds per rest')
 label3.grid(row=4, column=0)
 rest=Entry(window, width=35, borderwidth=5)
 rest.grid(row=5, column=0)
+
 
 def click():
     res="Number of exercises " + num.get()
@@ -38,6 +59,7 @@ label5.grid(row=8, column=0)
 
 label6=Label(window)
 label6.grid(row=9, column=0)
+
 
 
 
@@ -121,9 +143,11 @@ exerciseList = ['American Swing',
 
 
 
-#Label("Your " + (num) + " exercises are...").pack()
+label7=Label(text="Your " + num.get() + " exercises are...")
+label7.grid(row=10, column=0)
 #sampled_list = random.sample(exerciseList, int(num))
-#Label(window, '\n'.join(sampled_list)).grid(row=29, column=0)
+#lable8=Label(window, '\n'.join(sampled_list))
+#lable8.grid(row=29, column=0)
 #time.sleep(10)
 
 #for x in sampled_list:
