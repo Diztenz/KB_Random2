@@ -147,6 +147,18 @@ def list():
     label7=Label(text='\n'.join(sampled_list))
     label7.grid(row=17, column=0)
 
+time.sleep(10)
+    for x in sampled_list:
+       Label(x).grid(row=17, column=0)
+       for i in range(1, int(exercise.get())+1):
+           Label(i, end=', ').grid(row=17, column=0)
+           time.sleep(1)
+
+       #print("Rest") 
+       #for i in range(int(rest.get()), 0, -1):
+        #print('Rest time remaining:', i)
+        #time.sleep(1)
+
 
 myButton=Button(window, text="Let's Go!", padx=40, pady=20, command=list)
 myButton.grid(row=16, column=0)
@@ -162,12 +174,12 @@ myButton.grid(row=16, column=0)
 
 #for x in sampled_list:
 #    print(x)
-#    for i in range(1, int(exercise)+1):
+#    for i in range(1, int(exercise.get())+1):
 #        print(i, end=', ')
 #        time.sleep(1)
 #
 #   print("Rest") 
-#    for i in range(int(rest), 0, -1):
+#    for i in range(int(rest.get()), 0, -1):
 #        print('Rest time remaining:', i)
 #        time.sleep(1)
 
