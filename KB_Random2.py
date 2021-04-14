@@ -2,9 +2,13 @@ from tkinter import *
 import random
 import time
 
+num = IntVar
+exercise = IntVar
+rest = IntVar
+
 window = Tk()
 #window.title("Kettlebell Randomizer")
-window.geometry("400x400")
+window.geometry("400x600")
 
 def number():
     try:
@@ -48,7 +52,7 @@ def click():
     res2="Time of Rest " + rest.get()
     label6.configure(text=res2, font=15)
 
-myButton=Button(window, text="Let's go!", padx=40, pady=20, fg="orange", bg="blue", command=click)
+myButton=Button(window, text="Ready Up!", padx=40, pady=20, fg="orange", bg="blue", command=click)
 myButton.grid(row=6, column=0)
 
 label4=Label(window)
@@ -138,14 +142,20 @@ exerciseList = ['American Swing',
 'Windmill',
 'Wood Choppers']
 
+def list():
+    sampled_list = random.sample(exerciseList, int(num.get()))
+    label7=Label(text='\n'.join(sampled_list))
+    label7.grid(row=17, column=0)
 
 
+myButton=Button(window, text="Let's Go!", padx=40, pady=20, command=list)
+myButton.grid(row=16, column=0)
 
+#label7=Label(text="Your " + num.get() + " exercises are...")
+#label7.grid(row=10, column=0)
 
-
-label7=Label(text="Your " + num.get() + " exercises are...")
-label7.grid(row=10, column=0)
 #sampled_list = random.sample(exerciseList, int(num))
+
 #lable8=Label(window, '\n'.join(sampled_list))
 #lable8.grid(row=29, column=0)
 #time.sleep(10)
