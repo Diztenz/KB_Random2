@@ -26,7 +26,8 @@ def click():
 myButton=Button(window, text="Let's go!", padx=40, pady=20, fg="orange", bg="blue", command=click)
 myButton.grid(row=6, column=0)
 
-label4=Label(window).grid(row=7, column=0)
+label4=Label(window)
+label4.grid(row=7, column=0)
 
 
 
