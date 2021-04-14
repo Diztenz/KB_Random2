@@ -22,12 +22,22 @@ rest.grid(row=5, column=0)
 def click():
     res="Number of exercises " + num.get()
     label4.configure(text=res, font=15)
+    res1="Time of exercise " + exercise.get()
+    label5.configure(text=res1, font=15)
+    res2="Time of Rest " + rest.get()
+    label6.configure(text=res2, font=15)
 
 myButton=Button(window, text="Let's go!", padx=40, pady=20, fg="orange", bg="blue", command=click)
 myButton.grid(row=6, column=0)
 
 label4=Label(window)
 label4.grid(row=7, column=0)
+
+label5=Label(window)
+label5.grid(row=8, column=0)
+
+label6=Label(window)
+label6.grid(row=9, column=0)
 
 
 
